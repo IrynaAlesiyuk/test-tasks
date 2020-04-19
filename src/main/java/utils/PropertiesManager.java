@@ -1,28 +1,24 @@
 package utils;
 
+import lombok.SneakyThrows;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesManager {
-    private FileInputStream file;
 
-    public String propFile(String propItem)  {
-
+    @SneakyThrows
+    public static String propFile(String propItem) {
         Properties properties = new Properties();
+        FileInputStream file;
         try {
-            file = new FileInputStream("//Users//iral//Desktop//Project//My//testtask//localEnvironment.properties");
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
+            file = new FileInputStream("localEnvironment.properties");
             properties.load(file);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new FileNotFoundException();
         }
         return properties.getProperty(propItem);
     }
-
 }

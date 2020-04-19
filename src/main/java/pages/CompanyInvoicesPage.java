@@ -5,16 +5,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class CompanyInvoicesPage {
 
-     @FindBy(xpath = "//tbody//td[text()='146566']//..//..//preceding-sibling::tbody[@class='gl-0 tgl eo ui-selectee'][1]//td[@class='cal'][3]")
+     @FindBy(xpath = "//tbody//td[text()='146566']//..//..//preceding-sibling::tbody[contains(@class,'ui-selectee')][1]//td[@class='cal'][3]")
     protected WebElement companyName;
 
-    @FindBy(xpath = "//tbody//td[text()='146566']//..//..//preceding-sibling::tbody[@class='gl-0 tgl eo ui-selectee'][1]//td[@class='cal'][4]")
+    @FindBy(xpath = "//tbody//td[text()='146566']//..//..//preceding-sibling::tbody[contains(@class,'ui-selectee')][1]//td[@class='cal'][4]")
     protected WebElement invoiceAddress;
 
-    @FindBy(xpath = "//tbody//td[text()='146566']/following::tbody[@class='   gl-2 '][1]//td[2]")
+    @FindBy(xpath = "//tbody//td[text()='146566']/following::tbody[contains(@class,'gl-2')][1]//td[2]")
     protected WebElement grade;
 
-    @FindBy(xpath = "//tbody//td[text()='146566']/following::tbody[@class='   gl-2 '][1]//td[3]")
+    @FindBy(xpath = "//tbody//td[text()='146566']/following::tbody[contains(@class,'gl-2')][1]//td[3]")
     protected WebElement weight;
 
     @FindBy(xpath = "//tbody//td[text()='146566']/following::td[text()='Flat charge'][1]/following::td[6]")

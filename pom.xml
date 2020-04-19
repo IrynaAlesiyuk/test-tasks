@@ -18,8 +18,8 @@
         <selenium.chrome.driver.version>4.0.0-alpha-5</selenium.chrome.driver.version>
         <selenium.java.version>4.0.0-alpha-5</selenium.java.version>
         <selenium.server.version>4.0.0-alpha-2</selenium.server.version>
+        <lombok.version>1.18.10</lombok.version>
     </properties>
-
     <build>
         <resources>
             <resource>
@@ -44,10 +44,7 @@
             </plugin>
         </plugins>
     </build>
-
-
     <dependencies>
-
         <!--Test-->
         <dependency>
             <groupId>org.testng</groupId>
@@ -61,7 +58,6 @@
             <version>${hamcrest.all.version}</version>
             <scope>compile</scope>
         </dependency>
-
         <!--Selenium-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -78,7 +74,12 @@
             <artifactId>selenium-server</artifactId>
             <version>${selenium.server.version}</version>
         </dependency>
-
+        <!--General-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
-
 </project>

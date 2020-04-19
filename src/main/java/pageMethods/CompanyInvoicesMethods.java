@@ -5,38 +5,29 @@ import org.openqa.selenium.support.PageFactory;
 import pages.CompanyInvoicesPage;
 
 public class CompanyInvoicesMethods extends CompanyInvoicesPage {
-    private WebDriver driver;
 
     public CompanyInvoicesMethods(WebDriver driver) {
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     public String getElementValue(String element) {
-        String elementValue = null;
         switch (element) {
             case "company":
-                elementValue = companyName.getText();
-                break;
+                return companyName.getText();
             case "invoiceAddress":
-                elementValue = invoiceAddress.getText();
-                break;
+                return invoiceAddress.getText();
             case "grade":
-                elementValue = grade.getText();
-                break;
+                return grade.getText();
             case "weight":
-                elementValue = weight.getText();
-                break;
+                return weight.getText();
             case "flatChargeLineTotal":
-                elementValue = flatChargeLineTotal.getText();
-                break;
+                return flatChargeLineTotal.getText();
             case "perTonneLineTotal":
-                elementValue = perTonneLineTotal.getText();
-                break;
+                return perTonneLineTotal.getText();
             case "itemLineTotal":
-                elementValue = itemLineTotal.getText();
-                break;
+                return itemLineTotal.getText();
+            default:
+                throw new IllegalArgumentException("Argument is not found");
         }
-        return elementValue;
     }
 }
